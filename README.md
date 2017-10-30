@@ -1,7 +1,15 @@
 # libGps
 Simple library for easily accessing location on android, written in kotlin
 
-to use: 
+## to use: 
+
+import java file into project and set package to match your project
+
+add the following to your android-manifest.xml:
+```xml
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+```
+
 ```java
 class mainActivity(){
   Gps mGps = new Gps();
@@ -24,4 +32,4 @@ mGps.getLocation();           //(Location) returns most recent location in an ob
 mGps.requestPermission(this); //requests location permission. called automatically during init, but useful 
                               //if you need to ask again after initialization 
 ```
-init() will ask for permissions for you, although there may be issues if the user says no
+init() will ask for permissions for you, although there may be issues if the user says no, then you may have to call requestPermission() in your code again. 

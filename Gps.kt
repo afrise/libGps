@@ -16,7 +16,7 @@ class Gps : LocationListener {
     override fun onProviderEnabled(s: String) {}
     override fun onProviderDisabled(s: String) {}
     fun init(activity: Activity) { requestPermission(activity)
-         try { activity.applicationContext.getSystemService(LocationManager::class.java).requestLocationUpdates(LocationManager.GPS_PROVIDER, 1, 1f, this) } catch (e: SecurityException) {}}}
+         try { activity.applicationContext.getSystemService(LocationManager::class.java).requestLocationUpdates(LocationManager.GPS_PROVIDER, 1, 1f, this) } catch (e: SecurityException) {}}
     fun latitude(): Double { return location.latitude }
     fun longitude(): Double { return location.longitude }
     fun latLng(): LatLng { return LatLng(location.latitude, location.longitude) }
